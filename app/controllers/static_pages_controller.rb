@@ -14,7 +14,7 @@ class StaticPagesController < ApplicationController
   def shop
   end
 
-  def Contact
+  def contact
   end
 
   def code
