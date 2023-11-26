@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   get "/staff", to:'static_pages#staff'
   get "/shop", to:'static_pages#shop'
   get "/contact", to:'static_pages#contact'
+
+  get "/signup", to:'users#new'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
+
+  resources :users
 end
