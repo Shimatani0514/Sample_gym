@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 
 .alert {
     padding-bottom: 30px;
@@ -20,3 +21,139 @@
     color: red;
     font-weight: bold;
 }
+
+.alert_login {
+    padding-bottom: 30px;
+    font-size: 24px;
+    color: red;
+    font-weight: bold;
+}
+
+.border-b {
+    border-bottom: 2px solid black;
+    width: 100%;
+    text-decoration: none;
+}
+
+.border-b:hover {
+    border-bottom: none;
+}
+
+
+/* ドロップダウン */
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.6rem;
+    cursor: pointer;             
+    border-radius: 10%;
+    border: solid 2px white;
+    position: relative;
+  }
+
+  .dropdown {
+    z-index: 100;
+    position: absolute;
+    width: 120px;
+    border: solid 2px white;
+    border-radius: 10%;
+    margin-top: 0.3rem;
+    background: gray;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(0.5rem);
+    transition: all 0.1s cubic-bezier(0.16, 1, 0.5, 1);
+  }
+
+  .link {
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .bx {
+    font-size: 1.1rem;
+  }
+
+  .link:hover {
+    background-color: gainsboro;
+    color: black;
+    border-radius: 10%;
+  }
+
+  .show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+  
+  .arrow {
+    transform: rotate(180deg);
+    transition: 0.2s ease;
+  }
+
+/* ローディングアニメーション */
+
+#loading {
+    display: none; /* 最初は非表示 */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff; 
+    z-index: 9999; /* 他の要素の上に表示 */
+    transition: opacity 1s ease; /* opacityのトランジション */
+} 
+
+.spinner {
+    width: 400px;
+    height: 400px;
+    margin: 400px auto;
+    animation: sk-scaleout 5.0s infinite ease-in-out;
+}
+
+@keyframes sk-scaleout {
+    0% {
+      transform: scale(0);
+    } 100% {
+      transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+
+  /* 初期状態 */
+#content {
+    opacity: 1; /* 最初は表示 ページ遷移のため */
+    transition: opacity 4s ease; /* opacityのトランジション */
+    /* 他のスタイル */
+  }
+
+
+  /* スクロールトップアップボタン */
+
+  #scroll-to-top-btn{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    height: 90px;
+    width: 90px;
+    color: white;
+    font-size: 45px;
+    background-color: gray;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    transform: rotate(-90deg);
+    opacity: 0;
+    transition-duration: 1s;
+  }

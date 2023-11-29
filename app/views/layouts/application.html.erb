@@ -10,12 +10,20 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+
   </head>
 
   <body>
-    <main>
-      <%= render "layouts/header" %>
+
+  <div id="loading">
+    <%= image_tag("kishimako.png", class: "spinner") %>
+  </div>
+
+    <main id="content" class="spinner2">
+      <%= render partial: "layouts/header"%>
       <%= yield %>
+      <button id="scroll-to-top-btn">≫</button>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     </main>

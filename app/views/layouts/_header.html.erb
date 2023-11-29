@@ -1,12 +1,31 @@
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
 <header class="bg-black text-white">
         <div class="max-w-screen-xl mx-auto px-6 py-5 flex justify-between items-center">
             <div>
-                <%= image_tag("kishimako.png", class:"rounded-full overflow-hidden w-10 ml-7", alt: "kishimakolog") %>
+                <%= image_tag("kishimako.png", class:"rounded-full overflow-hidden w-10 ml-10", alt: "kishimakolog") %>
             </div>
                 <nav>
                     <ul class="flex">
-                        <li class="ml-auto "><%= link_to "ログイン", class: "hover:text-gray-300 transition duration-300" %></li>
+                        <% if logged_in? %>
+                            <div class="mr-10">
+                                <button class="btn" id="btn">
+                                アカウント<i id="arrow" class="bx bx-chevron-down"></i>
+                                </button>
+                                <div id="dropdown" class="dropdown">
+                                    <%= link_to " 予約", '#' ,class: "link"%>
+                                    <%= link_to " プロフィール", current_user ,class: "link" %>
+                                    <%= link_to " ログアウト", logout_path,
+                                                                data: { "turbo-method": :delete },
+                                                                onclick: "return confirm('本当にログアウトしますか？')",
+                                                                class: "link" 
+                                    %>
+                                </div>
+                            </div>
+                        <% else %>
+                        <li class="ml-auto "><%= link_to "ログイン", 'login', class: "hover:text-gray-300 transition duration-300" %></li>
                         <li class="ml-10 mr-10"><%= link_to "新規登録", 'signup', class: "hover:text-gray-300 transition duration-300" %></li>
+                        <% end %>
                     </ul>
                 </nav>
             </div>
@@ -17,7 +36,7 @@
             <div class="max-w-screen-xl mx-auto px-4"> 
                 <ul class="flex justify-between container items-center">
                     <li class="hover:bg-gray-400 transition-all duration-200 flex items-center">
-                    <%= link_to "ホーム", 'home', class:"text-xl flex items-center justify-center px-6 py-3" %></li>
+                    <%= link_to "ホーム", 'home',id: "home", class:"text-xl flex items-center justify-center px-6 py-3" %></li>
                     <li class="hover:bg-gray-400 transition-all duration-200 flex items-center">
                     <%= link_to "サービス一覧", 'service', class:"text-xl flex items-center justify-center px-6 py-3" %></li>
                     <li class="hover:bg-gray-400 transition-all duration-200 flex items-center">

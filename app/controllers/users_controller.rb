@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash[:alert] = "*入力に誤りがあります*"
-      render 'new' , status: :unprocessable_entity
+      render 'new'
     end
   end
   
