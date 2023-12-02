@@ -69,3 +69,29 @@ function scroll_event(){
   }
   };
 });
+
+
+/* ハンバーガーメニュー */
+
+document.addEventListener("turbo:load", function () {
+  const hambergerBtn = document.querySelector("#hamburger_js");
+  const hambergerNav = document.querySelector("#hamburger_div");
+
+  hambergerBtn.addEventListener("click", function () {
+    const isActive = hambergerNav.classList.contains('active');
+    
+    hambergerNav.style.opacity = '0';
+    // 読み込み完了後、要素を徐々に表示
+    setTimeout(function() {
+      hambergerNav.style.opacity = '1';
+    }, 100); // 遅延を加えて実行される時間を遅らせる
+
+
+    hambergerBtn.classList.toggle('active');
+    hambergerNav.classList.toggle('active');
+
+    const body = document.querySelector('body');
+    body.style.overflow = hambergerNav.classList.contains('active') ? 'hidden' : 'auto';
+  });
+
+});

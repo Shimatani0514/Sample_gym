@@ -1,5 +1,41 @@
 <% provide(:title, @user.name) %>
 
-<h1>
-  <%= @user.name %>
-</h1>
+<div class="min-h-screen flex flex-col">
+  <div class="flex flex-col justify-center items-center max-w-screen-xl mx-auto mt-8">
+    <h1 id="mypage-title" class="text-7xl mt-20 mb-20">ー マイページ ー</h1>
+    <div class="flex flex-col justify-center items-center">
+      <h1 id="mypage_coment" class="text-2xl">名前: <%= @user.name %></h1>
+      <h1 id="mypage_coment" class="text-2xl mb-20">メールアドレス: <%= @user.email %></h1>
+
+      <h1 id="mypage_subtitle" class="text-5xl mb-10">予約一覧</h1>
+
+      <div class="col-12 mt-3 text-center mx-auto">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">予約日</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+              <td>
+                            
+              </td>
+              <td>
+                <%= link_to '削除', method: :delete, data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %>
+              </td>
+            </tr>
+
+          <% if  %>
+            <tr>
+              <td>予約はありません。</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+</div>

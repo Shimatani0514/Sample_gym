@@ -3,7 +3,7 @@
 <header class="bg-black text-white">
         <div class="max-w-screen-xl mx-auto px-6 py-5 flex justify-between items-center">
             <div>
-                <%= image_tag("kishimako.png", class:"rounded-full overflow-hidden w-10 ml-10", alt: "kishimakolog") %>
+                <%= image_tag("kishimako.png",id: "icon", class:"rounded-full overflow-hidden w-10 ml-10", alt: "kishimakolog") %>
             </div>
                 <nav>
                     <ul class="flex">
@@ -26,12 +26,20 @@
                         <li class="ml-auto "><%= link_to "ログイン", 'login', class: "hover:text-gray-300 transition duration-300" %></li>
                         <li class="ml-10 mr-10"><%= link_to "新規登録", 'signup', class: "hover:text-gray-300 transition duration-300" %></li>
                         <% end %>
+
+                        <div class="">
+                        <button id="hamburger_js" class="hamburger_button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        </div>
                     </ul>
                 </nav>
             </div>
     </header>
 
-    <div>
+    <div class="header-second">
         <nav class="text-white bg-gray-600 w-screen py-3 mx-auto">
             <div class="max-w-screen-xl mx-auto px-4"> 
                 <ul class="flex justify-between container items-center">
@@ -51,3 +59,20 @@
             </div>
         </nav>
     </div>
+
+    <div id="hamburger_div" class="hamburger_div "> 
+                <ul class="items">
+                    <li class="item">
+                    <%= link_to "ホーム", 'home', class:"block w-full h-full" %></li>
+                    <li class="">
+                    <%= link_to "サービス一覧", 'service', class:"block w-full h-full" %></li>
+                    <li class="">
+                    <%= link_to "料金", 'fee', class:"block w-full h-full" %></li>
+                    <li class="">
+                    <%= link_to "スタッフ紹介", 'staff', class:"block w-full h-full" %></li>
+                    <li class="">
+                    <%= link_to "店舗一覧", 'shop', class:"block w-full h-full" %></li>
+                    <li class="">
+                    <%= link_to "お問い合わせ", 'contact', class:"block w-full h-full" %></li>
+                </ul>
+            </div>

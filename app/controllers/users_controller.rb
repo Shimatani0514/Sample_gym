@@ -15,7 +15,13 @@ class UsersController < ApplicationController
   
 
   def show
-    @user = User.find(params[:id])
+    case params[:id]
+    when 'home', 'service', 'fee', 'staff', 'shop', 'contact'
+      redirect_to "/#{params[:id]}" # もしくは特定のパスにリダイレクトしたいページのルートを指定
+    else
+      # 通常の処理（ユーザー詳細など）を行います
+      @user = User.find(params[:id])
+    end
   end
 
   private

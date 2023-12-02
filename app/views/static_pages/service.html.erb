@@ -2,46 +2,46 @@
 
 <div class="min-h-screen flex flex-col justify-center items-center">
         <div class="flex flex-col justify-center items-center max-w-screen-xl mx-auto text-center mt-8">
-            <h1 class="text-7xl mt-20 mb-20">ー サービス一覧 ー</h1>
+            <h1 id="service-title" class="text-7xl mt-20 mb-20">ー サービス一覧 ー</h1>
                 <div class="flex flex-col justify-center items-center">
                     <h3 class="m-5 text-4xl font-bold">ジム利用</h3>
                     <%= image_tag("adult-1850925_1280.jpg", class: "w-100 h-80") %>
-                    <p class="mt-5 font-bold text-3xl">
-                        24時間営業のため、予約サイトからお好きな時間にご予約可能<br>
-                        ご予約時間は個室貸切りとなるため、周りの目を気にすることなく<br>
+                    <p id="service-coment" class="mt-5 font-bold text-3xl">
+                        24時間営業のため、予約サイトからお好きな時間にご予約可能
+                        ご予約時間は個室貸切りとなるため、周りの目を気にすることなく
                         ​トレーニングを行うことができます
                     </p>
                 </div>
                 <div class="flex flex-col justify-center items-center">
                     <h3 class="mt-16 mb-5 text-4xl font-bold">パーソナルトレーニング</h3>
                     <%= image_tag("woman-1730325_1280.jpg", class: "w-100 h-80") %>
-                    <p class="mt-5 font-bold text-3xl">
-                        マンツーマンでトレーニングを指導<br>
-                        運動が初めての方や自分に合ったトレーニング方法を知り<br>
+                    <p id="service-coment" class="mt-5 font-bold text-3xl">
+                        マンツーマンでトレーニングを指導
+                        運動が初めての方や自分に合ったトレーニング方法を知り
                         ​より効果的で効率よく運動を行うことができます
                     </p>
                 </div>
                 <div class="flex flex-col justify-center items-center">
                     <h3 class="mt-16 mb-5 text-4xl font-bold">整体</h3>
                     <%= image_tag("massage-2768833_1280.jpg", class: "w-100 h-80") %>
-                    <p class="mt-5 font-bold text-3xl">
-                        痛みの軽減や不調改善に最適<br>
-                        姿勢の歪みや凝り固まった筋肉による不調を改善し<br>
+                    <p id="service-coment" class="mt-5 font-bold text-3xl">
+                        痛みの軽減や不調改善に最適
+                        姿勢の歪みや凝り固まった筋肉による不調を改善し
                         ​運動を併用することで再発しない身体作りを目指します
                     </p>
                 </div>
                 <div class="flex flex-col justify-center items-center">
                     <h3 class="mt-16 mb-12 text-4xl font-bold">​オンライン食事指導</h3>
                     <%= image_tag("phone-869669_1280.jpg", class: "w-100 h-80") %>
-                    <p class="mt-5 font-bold text-3xl">
-                        食事の管理によって身体作りの基本習慣を見直し<br>
-                        人間の身体は食事や運動の内容に大きな影響を受けます<br>
-                        食事面の改善が運動の効果を向上させ、健康的なライフスタイルへ<br>
+                    <p id="service-coment" class="mt-5 font-bold text-3xl">
+                        食事の管理によって身体作りの基本習慣を見直し
+                        人間の身体は食事や運動の内容に大きな影響を受けます
+                        食事面の改善が運動の効果を向上させ、健康的なライフスタイルへ
                         ​導くことができます
                     </p>
                 </div>
 
-                <p class="mt-16 font-bold text-2xl text-red-500">※オプションメニュー、料金形態は担当スタッフにより異なる場合がございます。
+                <p id="service-coment" class="mt-16 font-bold text-2xl text-red-500">※オプションメニュー、料金形態は担当スタッフにより異なる場合がございます。
                     詳細は以下のスタッフ紹介をご覧ください。
                 </p>
                 <button class="mt-5 mb-20 text-2xl bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
@@ -52,9 +52,9 @@
                 <div class="max-w-screen-xl mx-auto text-center relative">
                 <%= image_tag("dumbbell-1966247_1280.jpg", class: "w-full opacity-70 filter brightness-75") %>
                     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white w-full max-w-lg">
-                        <h1 class="text-5xl mt-68 mb-14">今までにない新しい<br>フィットネスを体験しよう</h1>
-                        <p class="text-3xl font-bold my-5">さあ、今すぐフィットネスを始めよう‼︎</p>
-                        <button class="m-20 text-4xl bg-yellow-300 hover:bg-yellow-400 text-black py-4 px-8 rounded-full">
+                        <h1 id="service-down-title" class="text-5xl mt-68 mb-14">今までにない新しい<br>フィットネスを体験しよう</h1>
+                        <p id="service-down-coment" class="text-3xl font-bold my-5">さあ、今すぐフィットネスを始めよう‼︎</p>
+                        <button id="service-button" class="m-20 text-4xl bg-yellow-300 hover:bg-yellow-400 text-black py-4 px-8 rounded-full">
                         <%= link_to "入会はこちら", 'signup' %>
                         </button>
                     </div>

@@ -6,9 +6,9 @@
           <%= image_tag("gym-91849_1280.jpg", class: "w-full opacity-70 filter brightness-75") %>
 
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white w-full max-w-lg">
-                <h1 class="text-5xl my-10 bg-red-400">24時間営業/個室貸切り</h1>
-                <p class="text-5xl my-10 bg-red-400">整体/パーソナルトレーニング</p>
-                <button class="m-20 text-4xl bg-yellow-300 hover:bg-yellow-400 text-white font-bold py-4 px-8 rounded-full">
+                <h1 id="home-title" class="text-5xl my-10 bg-red-400">24時間営業/個室貸切り</h1>
+                <p id="home-coment" class="text-5xl my-10 bg-red-400">整体/パーソナルトレーニング</p>
+                <button id="home-button" class="m-20 text-4xl bg-yellow-300 hover:bg-yellow-400 text-white font-bold py-4 px-8 rounded-full">
                 <%= link_to "入会はコチラ", 'signup' %>
                 </button>
             </div>
@@ -73,36 +73,36 @@
 </div>
 <div class="bg-blue-200">
     <div class="flex flex-col justify-center items-center">
-        <h1 >入会の流れ</h1>
+        <h1 class="text-5xl w-full text-center my-10">ー入会の流れー</h1>
         <div>
             <article>
-                <h2>STEP1 : お申込み</h2>
+                <h2 class="text-3xl">STEP1 : お申込み</h2>
                 <%= image_tag("iphone-410324_1280.jpg", class: "w-100 h-80") %>
-                <p>まずは登録フォームにアクセス。<br>お客様情報、お申込みコース、お支払い方法をお選びください。</p>
+                <p class="text-lg">まずは登録フォームにアクセス。<br>お客様情報、お申込みコース、お支払い方法をお選びください。</p>
                 <div class="flex justify-center items-center">
                   <%= image_tag "icons8-下矢印-100.png" %>
                 </div>
                 </article>
             <article>
-                <h2>STEP2 : 店舗にて説明</h2>
+                <h2 class="text-3xl">STEP2 : 店舗にて説明</h2>
                 <%= image_tag("people-2561336_1280.jpg", class: "w-100 h-80") %>
-                <p>お申込み後、店舗に身分証書をご持参の上、<br>ご来館いただき、スタッフから説明を受けてください。</p>
+                <p class="text-lg">お申込み後、店舗に身分証書をご持参の上、<br>ご来館いただき、スタッフから説明を受けてください。</p>
                 <div class="flex justify-center items-center">
                     <%= image_tag "icons8-下矢印-100.png" %>
                 </div>
             </article>
             <article>
-                <h2>STEP3 : セキュリティー発行</h2>
+                <h2 class="text-3xl">STEP3 : セキュリティー発行</h2>
                 <%= image_tag("money-256319_1280.jpg", class: "w-100 h-80") %>
-                <p>ご説明後、ご本人様確認を完了してからセキュリティーの発行を致します。</p>
+                <p class="text-lg">ご説明後、ご本人様確認を完了してからセキュリティーの発行を致します。</p>
                 <div class="flex justify-center items-center">
                     <%= image_tag "icons8-下矢印-100.png" %>
                 </div>
             </article>
             <article>
-                <h2>STEP4 : ジムのご利用開始</h2>
+                <h2 class="text-3xl">STEP4 : ジムのご利用開始</h2>
                 <%= image_tag("plank-2054729_1280.jpg", class: "w-100 h-80") %>
-                <p>​予約して頂いた時間にご来館いただき、トレーニングをお楽しみください。</p>
+                <p class="text-lg">​予約して頂いた時間にご来館いただき、トレーニングをお楽しみください。</p>
             </article>
         </div>
     </div>
@@ -110,17 +110,17 @@
     <div class="max-w-screen-xl mx-auto px- py-5 flex justify-between items-center">
         <div class="pt-10">
             <h3 class="border-b-4 border-black text-3xl pb-1">Kishimako fitness gym</h3>
-            <div class="flex flex-wrap">
-                <div class="w-1/2 pt-10 p-5">
+            <div id="shop-img" class="flex flex-wrap">
+                <div class="img-width w-1/2 pt-10 p-5">
                 <%= image_tag("break-room-5985662_1280.jpg", class: "w-full h-80 object-cover hover:scale-110 transition duration-700 ease-in-out") %>
                 </div>
-                <div class="w-1/2 pt-10 p-5">
+                <div class="img-width w-1/2 pt-10 p-5">
                   <%= image_tag("exercise-86200_1280.jpg", class: "w-full h-80 object-cover hover:scale-110 transition duration-700 ease-in-out") %>
                 </div>
-                <div class="w-1/2 p-5">
+                <div class="img-width w-1/2 p-5">
                   <%= image_tag("gym-595597_1280.jpg", class: "w-full h-80 object-cover hover:scale-110 transition duration-700 ease-in-out") %>
                 </div>
-                <div class="w-1/2 p-5">
+                <div class="img-width w-1/2 p-5">
                   <%= image_tag("sports-1962574_1280.jpg", class: "w-full h-80 object-cover hover:scale-110 transition duration-700 ease-in-out") %>
                 </div>
             </div>
