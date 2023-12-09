@@ -26,6 +26,7 @@
         <div class="mb-4">
           <%= f.label :birth_date, "生年月日", class: "block mb-1" %>
           <%= f.date_select :birth_date,
+              order: [:year, :month, :day],
               use_month_numbers: true,
               start_year: 1930,
               end_year: (Time.now.year - 18),

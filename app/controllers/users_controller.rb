@@ -8,21 +8,26 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user
     else
-      flash[:alert] = "*入力に誤りがあります*"
-      render 'new'
+      flash.now[:alert_index] = "登録に失敗しました"
+      render 'new', status: :unprocessable_entity
     end
   end
   
 
   def show
+    @user = User.find(current_user.id)
+    @user_reservations = current_user.reservations.where("start_time >= ?", DateTime.current).order(day: :desc)
+
     case params[:id]
-    when 'home', 'service', 'fee', 'staff', 'shop', 'contact'
+    when 'home', 'service', 'fee', 'staff', 'shop', 'contact', 'reservations'
       redirect_to "/#{params[:id]}" # もしくは特定のパスにリダイレクトしたいページのルートを指定
     else
       # 通常の処理（ユーザー詳細など）を行います
       @user = User.find(params[:id])
     end
   end
+
+  
 
   private
   def user_params

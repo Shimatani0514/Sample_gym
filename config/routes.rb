@@ -15,8 +15,16 @@ Rails.application.routes.draw do
   post "/login", to:'sessions#create'
   delete "/logout", to:'sessions#destroy'
 
+  get "/reservations", to: 'reservations#index'
+  get "/reservation/new", to: 'reservations#new'
+  post "/reservation", to: 'reservations#create'
+  get "/reservation/:id", to: 'reservations#show', as: 'reservation_show' # ルート名を変更
+  delete "/reservation/:id", to: 'reservations#destroy', as: 'reservation_destroy'
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   resources :users
+  resources :reservations
 end
