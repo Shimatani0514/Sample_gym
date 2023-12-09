@@ -37,12 +37,17 @@
 
         <div class="mb-4">
           <%= f.label :postal_code, "郵便番号", class: "block mb-1" %>
-          <%= f.text_field :postal_code, class: "border rounded px-4 py-2 w-64" %>
+          <%= f.text_field :postal_code, class: "border rounded px-4 py-2 w-64", id: "postalCode" %>
         </div>
 
         <div class="mb-4">
           <%= f.label :address, "住所", class: "block mb-1" %>
-          <%= f.text_field :address, class: "border rounded px-4 py-2 w-64" %>
+          <%= f.text_field :address, class: "border rounded px-4 py-2 w-64", id: "addressResult", readonly: true %>
+        </div>
+
+        <div class="mb-4">
+          <%= f.label :street_number, "番地", class: "block mb-1" %>
+          <%= f.text_field :street_number, class: "border rounded px-4 py-2 w-64" %>
         </div>
 
         <div class="mb-4">
@@ -73,3 +78,30 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('turbo:load', function() {
+    document.getElementById('postalCode').addEventListener('change', function() {
+      var postalCode = this.value;
+      fetchAddress(postalCode);
+    });
+  });
+
+  function fetchAddress(postalCode) {
+    fetch(`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${postalCode}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 200) {
+          var address = data.results[0].address1 + data.results[0].address2 + data.results[0].address3;
+          document.getElementById('addressResult').value = address;
+        } else {
+          document.getElementById('addressResult').value = '住所が見つかりません';
+        }
+      })
+      .catch(error => {
+        console.error('住所取得エラー:', error);
+        document.getElementById('addressResult').value = '住所取得に失敗しました';
+      });
+  }
+</script>
+

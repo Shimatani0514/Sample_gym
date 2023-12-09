@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      reset_session
+      log_in @user
       redirect_to @user
     else
       flash.now[:alert_index] = "登録に失敗しました"
@@ -15,7 +17,7 @@ class UsersController < ApplicationController
   
 
   def show
-    @user = User.find(current_user.id)
+    @current_user = User.find(current_user.id)
     @user_reservations = current_user.reservations.where("start_time >= ?", DateTime.current).order(day: :desc)
 
     case params[:id]
@@ -39,6 +41,7 @@ class UsersController < ApplicationController
                                  :telephone_number,
                                  :terms_accepted,
                                  :password,
-                                 :password_confirmation)
+                                 :password_confirmation,
+                                 :street_number)
   end
 end
